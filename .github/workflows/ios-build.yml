@@ -11,15 +11,38 @@ on:
 jobs:
   build:
     runs-on: macos-15
-    timeout-minutes: 60
+    timeout-minutes: 90
     defaults:
       run:
         working-directory: PlixiOS
     steps:
       - uses: actions/checkout@v4
 
-      - name: Elegir Xcode
-        run: sudo xcode-select -s /Applications/Xcode_16.app || xcodebuild -version
+      - name: Elegir Xcode e instalar plataforma iOS
+        working-directory: .
+        run: |
+          set -e
+          ls /Applications | grep -i Xcode || true
+          for candidate in \
+            /Applications/Xcode_16.4.app \
+            /Applications/Xcode_16.3.app \
+            /Applications/Xcode_16.2.app \
+            /Applications/Xcode_16.1.app \
+            /Applications/Xcode_16.0.app \
+            /Applications/Xcode_16.app \
+            /Applications/Xcode.app
+          do
+            if [ -d "$candidate" ]; then
+              sudo xcode-select -s "$candidate"
+              echo "Usando $candidate"
+              break
+            fi
+          done
+          xcodebuild -version
+          xcodebuild -showsdks || true
+          # En runners nuevos a veces falta el runtime/plataforma iOS.
+          xcodebuild -downloadPlatform iOS || true
+          xcodebuild -showsdks
 
       - name: Instalar XcodeGen
         run: brew install xcodegen
@@ -56,7 +79,17 @@ jobs:
             -destination 'generic/platform=iOS' \
             -derivedDataPath build \
             -clonedSourcePackagesDirPath build/SourcePackages \
+            -resolvePackageDependencies
+          xcodebuild \
+            -project PlixiOS.xcodeproj \
+            -scheme PlixiOS \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            -clonedSourcePackagesDirPath build/SourcePackages \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            ONLY_ACTIVE_ARCH=NO \
             build | tee build/xcodebuild.log
 
       - name: Empaquetar IPA
@@ -79,3 +112,4 @@ jobs:
         with:
           name: xcodebuild-log
           path: PlixiOS/build/xcodebuild.log
+          if-no-files-found: ignore
