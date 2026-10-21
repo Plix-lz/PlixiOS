@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "filename" : "lzplay_splash_logo.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

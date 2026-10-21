@@ -1,0 +1,4 @@
+// Valores públicos de compilación. Las claves privadas van en Secrets.xcconfig (no se versiona).
+TMDB_API_KEY =
+
+#include? "Secrets.xcconfig"
