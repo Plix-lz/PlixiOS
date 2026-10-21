@@ -21,9 +21,10 @@ targets:
           - "Resources/**"
       - path: PlixiOS/Resources
         buildPhase: resources
-      - path: Config/GoogleService-Info.plist
-        optional: true
-        buildPhase: resources
+        excludes:
+          - "**/.gitkeep"
+      # GoogleService-Info.plist: colocar en PlixiOS/Resources/ (está en .gitignore).
+      # Sin ese archivo la app compila en modo local; con él se activa Firebase.
     configFiles:
       Debug: Config/App.xcconfig
       Release: Config/App.xcconfig

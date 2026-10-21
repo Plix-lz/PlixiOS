@@ -34,7 +34,7 @@ Requisitos: iOS 16 o superior, solo iPhone. Dependencias por Swift Package Manag
 | Secreto | Para qué | Dónde se pone |
 |---|---|---|
 | Clave TMDB | Catálogo, búsqueda, detalles | `PlixiOS/Config/Secrets.xcconfig` (local) o secret `TMDB_API_KEY` (GitHub) |
-| `GoogleService-Info.plist` | Cuenta, respaldo, amigos, Cine Virtual | `PlixiOS/Config/GoogleService-Info.plist` (local) o secret `GOOGLE_SERVICE_INFO_PLIST_BASE64` (GitHub) |
+| `GoogleService-Info.plist` | Cuenta, respaldo, amigos, Cine Virtual | `PlixiOS/PlixiOS/Resources/GoogleService-Info.plist` (local) o secret `GOOGLE_SERVICE_INFO_PLIST_BASE64` (GitHub) |
 
 Los dos archivos están en `.gitignore`. Sin `GoogleService-Info.plist` la app compila y funciona, pero las funciones en la nube se muestran como no disponibles.
 
@@ -66,7 +66,7 @@ La clave TMDB queda dentro del binario (igual que en Android, donde va en `Build
 brew install xcodegen
 cd PlixiOS
 cp Config/Secrets.xcconfig.example Config/Secrets.xcconfig   # y escribí la clave
-# copiar GoogleService-Info.plist a Config/
+# copiar GoogleService-Info.plist a PlixiOS/Resources/
 xcodegen generate
 open PlixiOS.xcodeproj
 ```

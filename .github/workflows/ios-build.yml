@@ -58,8 +58,8 @@ jobs:
           fi
           printf 'TMDB_API_KEY = %s\n' "$TMDB_API_KEY" > Config/Secrets.xcconfig
           if [ -n "$GOOGLE_SERVICE_INFO_PLIST_BASE64" ]; then
-            echo "$GOOGLE_SERVICE_INFO_PLIST_BASE64" | base64 --decode > Config/GoogleService-Info.plist
-            plutil -lint Config/GoogleService-Info.plist
+            echo "$GOOGLE_SERVICE_INFO_PLIST_BASE64" | base64 --decode > PlixiOS/Resources/GoogleService-Info.plist
+            plutil -lint PlixiOS/Resources/GoogleService-Info.plist
           else
             echo "::warning::Sin GOOGLE_SERVICE_INFO_PLIST_BASE64: la app se compila sin cuenta, amigos ni Cine Virtual."
           fi

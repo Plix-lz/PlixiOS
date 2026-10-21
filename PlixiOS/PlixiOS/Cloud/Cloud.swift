@@ -9,8 +9,12 @@ enum CloudConfig {
     private(set) static var isConfigured = false
 
     static func configureIfPossible() {
-        guard !isConfigured,
-              Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") != nil else { return }
+        guard !isConfigured else { return }
+        guard let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist"),
+              let values = NSDictionary(contentsOfFile: path) as? [String: Any],
+              let appId = values["GOOGLE_APP_ID"] as? String,
+              !appId.isEmpty,
+              appId != "1:0:ios:0" else { return }
         FirebaseApp.configure()
         isConfigured = true
     }

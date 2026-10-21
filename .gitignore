@@ -6,3 +6,4 @@ build/
 *.xcodeproj/
 PlixiOS/Config/Secrets.xcconfig
 PlixiOS/Config/GoogleService-Info.plist
+PlixiOS/PlixiOS/Resources/GoogleService-Info.plist
