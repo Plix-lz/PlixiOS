@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Video</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/slider.css">
+    <link rel="stylesheet" href="styles/contents.css">
+    <link rel="stylesheet" href="styles/detail.css">
+    <link rel="stylesheet" href="styles/categories.css">
+    <link rel="stylesheet" href="styles/profiles.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link href="https://fonts.cdnfonts.com/css/amazon-ember" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-left">
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a class="logo-link" href="#inicio" aria-label="Inicio">
+                <img class="logo" src="images/logo.svg" alt="Prime Video">
+            </a>
+            <nav class="header-nav" id="headerNav">
+                <ul class="header-menu">
+                    <li class="main-page nav-item is-active" data-view="home"><a href="#inicio">Inicio</a></li>
+                    <li class="nav-item" data-view="home"><a href="#peliculas">Películas</a></li>
+                    <li class="nav-item" data-view="home"><a href="#series">Series</a></li>
+                    <li class="categories nav-item" data-view="categories">
+                        <a class="categories-btn" href="#categorias" aria-label="Categorías">Categorías</a>
+                    </li>
+                    <li class="mobile-only"><a href="#">Mi lista</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="search-wrap">
+                <input class="search-bar" type="search" placeholder="Buscar" aria-label="Buscar">
+            </div>
+            <button class="search-icon-btn" id="searchToggle" aria-label="Buscar">
+                <img src="images/search.svg" alt="">
+            </button>
+            <div class="profile-area" id="profileArea">
+                <button type="button" class="profile-trigger" id="profileToggle" aria-expanded="false" aria-haspopup="true">
+                    <img class="profile-picture" src="images/profile.png" alt="">
+                    <span class="profile-text">Usuario ▾</span>
+                </button>
+                <ul class="profile-menu" id="profileMenu">
+                    <li class="profile-menu-label">Mi cuenta</li>
+                    <li>Ayuda</li>
+                    <li>Dispositivos compatibles</li>
+                    <li>Cuenta y configuración</li>
+                    <li>Cerrar sesión</li>
+                    <li class="profile-menu-divider" aria-hidden="true"></li>
+                    <li class="profile-menu-label">Perfiles</li>
+                    <li id="account-1">Perfil 1</li>
+                    <li id="account-2">Niños</li>
+                    <li><a href="#perfiles" data-profiles-action="add">Añadir perfil</a></li>
+                    <li><a href="#perfiles" data-profiles-action="edit">Editar perfiles</a></li>
+                    <li>Más información</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <main>
+        <div id="home-view" class="page-view is-active" data-page="home">
+        <section class="slider-area" id="heroSlider" aria-label="Destacados" data-testid="top-hero">
+            <div class="sliders" data-testid="fading-rotating-carousel">
+                <article class="hero-slide is-active" data-index="0" aria-label="Número de título 1">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-1.webp" alt="" loading="eager" fetchpriority="high">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">El Señor de los Anillos: Los Anillos de Poder</h2>
+                        <p class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">↑</span> #1 en El Salvador</p>
+                        <p class="hero-synopsis">Temporada 1 · En una Tierra Media aún joven, héroes y villanos forjan el destino de todos.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 16+">16+</span>
+                </article>
+                <article class="hero-slide" data-index="1" aria-label="Número de título 2" aria-hidden="true">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-2.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">The Boys</h2>
+                        <p class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">↑</span> Tendencias</p>
+                        <p class="hero-synopsis">Temporada 4 · Un grupo de vigilantes lucha contra superhéroes corruptos que abusan de su poder.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 18+">18+</span>
+                </article>
+                <article class="hero-slide" data-index="2" aria-label="Número de título 3" aria-hidden="true">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-3.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">Modern Love</h2>
+                        <p class="hero-synopsis">Antología · Historias reales de amor, pérdida y conexión en la ciudad de Nueva York.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 16+">16+</span>
+                </article>
+                <article class="hero-slide" data-index="3" aria-label="Número de título 4" aria-hidden="true">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-4.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">The Purge</h2>
+                        <p class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">↑</span> N.º 5 en terror</p>
+                        <p class="hero-synopsis">Una noche al año, todo crimen es legal. Sobrevive a las 12 horas más peligrosas.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 18+">18+</span>
+                </article>
+                <article class="hero-slide" data-index="4" aria-label="Número de título 5" aria-hidden="true">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-5.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">Sherlock</h2>
+                        <p class="hero-synopsis">El detective más brillante de Londres resuelve crímenes imposibles junto a John Watson.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 16+">16+</span>
+                </article>
+                <article class="hero-slide" data-index="5" aria-label="Número de título 6" aria-hidden="true">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-6.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">The Grand Tour</h2>
+                        <p class="hero-synopsis">Clarkson, Hammond y May vuelven a la carretera con aventuras, coches y humor sin filtro.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 13+">13+</span>
+                </article>
+                <article class="hero-slide" data-index="6" aria-label="Número de título 7" aria-hidden="true">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-7.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">Fleabag</h2>
+                        <p class="hero-badge"><span class="hero-badge-icon" aria-hidden="true">↑</span> Mejor valorado</p>
+                        <p class="hero-synopsis">Una mujer de Londres navega el amor, la familia y el dolor con humor negro e intimidad.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 18+">18+</span>
+                </article>
+                <article class="hero-slide" data-index="7" aria-label="Número de título 8" aria-hidden="true">
+                    <div class="hero-bg">
+                        <img src="sliders/slider-8.webp" alt="" loading="lazy">
+                    </div>
+                    <div class="hero-scrim" aria-hidden="true"></div>
+                    <div class="hero-meta">
+                        <h2 class="hero-title">Buenas noches mamá</h2>
+                        <p class="hero-synopsis">Dos hermanas aisladas en una casa de campo enfrentan secretos que redefinen su vínculo.</p>
+                        <div class="hero-actions">
+                            <a class="hero-btn-play" href="#" role="button"><span class="hero-play-icon" aria-hidden="true"></span> Reproducir</a>
+                            <a class="hero-btn-info" href="#" aria-label="Más información"><span aria-hidden="true">ⓘ</span></a>
+                        </div>
+                        <p class="hero-entitlement"><span class="hero-check" aria-hidden="true">✓</span> Se incluye con Prime</p>
+                    </div>
+                    <span class="hero-maturity" aria-label="Calificación 16+">16+</span>
+                </article>
+            </div>
+
+            <button type="button" class="slider-arrow slider-prev" aria-label="Anterior">
+                <img src="images/left-arrow.svg" alt="" aria-hidden="true">
+            </button>
+            <button type="button" class="slider-arrow slider-next" aria-label="Siguiente">
+                <img src="images/right-arrow.svg" alt="" aria-hidden="true">
+            </button>
+
+            <div class="bullets" role="tablist" aria-label="Diapositivas"></div>
+        </section>
+
+        <div class="all-contents-area">
+            <!-- Seguir viendo -->
+            <section class="content-area">
+                <div class="row-header">
+                    <div class="row-header-left">
+                        <h2 class="content-title">Seguir viendo</h2>
+                        <a href="#" class="row-see-more">Ver más</a>
+                    </div>
+                    <div class="row-controls">
+                        <button class="row-btn row-prev" aria-label="Anterior" type="button">‹</button>
+                        <button class="row-btn row-next" aria-label="Siguiente" type="button">›</button>
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-1.webp" alt="El Señor de los Anillos: Los Anillos de Poder">
+                                <span class="packshot-badge packshot-badge--prime">TOP 10</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">El Señor de los Anillos: Los Anillos de Poder - T1</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">TOP 10</span>
+                                    <span class="age-rating">13+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Ambientada en una era de relativa paz, la serie sigue a un elenco de personajes enfrentando el retorno del mal a la Tierra Media.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-2.webp" alt="The Boys">
+                                <span class="packshot-badge">MEJOR VALORADO</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">The Boys - T1</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">MEJOR VALORADO</span>
+                                    <span class="age-rating">18+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2019</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Un grupo de vigilantes se enfrenta a superhéroes corruptos que abusan de su poder e influencia.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-3.webp" alt="Modern Love">
+                                <span class="packshot-badge packshot-badge--accent">RECIÉN AÑADIDA</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Modern Love - T2</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">RECIÉN AÑADIDA</span>
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2021</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Una antología sobre el amor, las relaciones y las conexiones inesperadas de la vida moderna.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-4.webp" alt="The Purge">
+                                <span class="packshot-badge packshot-badge--accent">RECIÉN AÑADIDA</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">The Purge</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">RECIÉN AÑADIDA</span>
+                                    <span class="age-rating">13+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2013</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Durante una noche al año, todos los crímenes son legales. ¿Qué harías si pudieras actuar sin consecuencias?</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-5.webp" alt="Sherlock">
+                                <span class="packshot-badge">EL MEJOR DRAMA</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Sherlock: Serie 1</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">EL MEJOR DRAMA</span>
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2010</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Las aventuras de Sherlock Holmes y el doctor Watson llegan al Londres del siglo XXI.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-6.webp" alt="The Grand Tour">
+                                <span class="packshot-badge packshot-badge--prime">TEMPORADA ESTRENO</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">The Grand Tour - T5</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">TEMPORADA ESTRENO</span>
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Jeremy, Richard y James viajan al Círculo Polar Ártico en su primera aventura post-pandemia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Originales de Amazon -->
+            <section class="content-area">
+                <div class="row-header">
+                    <div class="row-header-left">
+                        <h2 class="content-title">Originales y exclusivos de Amazon</h2>
+                        <a href="#" class="row-see-more">Ver más</a>
+                    </div>
+                    <div class="row-controls">
+                        <button class="row-btn row-prev" aria-label="Anterior" type="button">‹</button>
+                        <button class="row-btn row-next" aria-label="Siguiente" type="button">›</button>
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-6.webp" alt="The Grand Tour">
+                                <span class="packshot-badge packshot-badge--prime">NUEVA TEMPORADA</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">The Grand Tour - T5</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">NUEVA TEMPORADA</span>
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Jeremy, Richard y James viajan al Círculo Polar Ártico en su primera aventura post-pandemia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-7.webp" alt="Buenas noches, mamá">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Buenas noches, mamá</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Dos hermanas gemelas llegan a la casa de campo de su madre y la encuentran con el rostro vendado tras una cirugía.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-9.webp" alt="Riesgo/Vuelo">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Riesgo/Vuelo</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">13+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Documental sobre los accidentes de los Boeing 737 Max y la crisis global que desataron.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-10.webp" alt="Fleabag">
+                                <span class="packshot-badge">MEJOR VALORADO</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Fleabag - T1</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">MEJOR VALORADO</span>
+                                    <span class="age-rating">18+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2016</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Una mujer inteligente, carismática y rota por el dolor navega la vida moderna en Londres.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-8.webp" alt="Relaciones especiales">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Relaciones especiales - T1</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Galicia, años 40. Marina Quiroga investiga crímenes con la ayuda de su leal criado Héctor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-1.webp" alt="Los Anillos de Poder">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Los Anillos de Poder</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">13+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">El origen épico de la Tierra Media llega a Prime Video.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Series y películas con subtítulos -->
+            <section class="content-area">
+                <div class="row-header">
+                    <div class="row-header-left">
+                        <h2 class="content-title">Series y películas con subtítulos</h2>
+                        <a href="#" class="row-see-more">Ver más</a>
+                    </div>
+                    <div class="row-controls">
+                        <button class="row-btn row-prev" aria-label="Anterior" type="button">‹</button>
+                        <button class="row-btn row-next" aria-label="Siguiente" type="button">›</button>
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-11.webp" alt="Título destacado">
+                                <span class="packshot-badge packshot-badge--accent">NUEVA SERIE</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Destacado Prime</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">NUEVA SERIE</span>
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Disfruta de miles de títulos incluidos con tu membresía Prime.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-12.webp" alt="Título destacado">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Estrenos recientes</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Lo último en series y películas disponible en Prime Video.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-13.webp" alt="Título destacado">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Drama internacional</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">13+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Historias envolventes de todo el mundo, con subtítulos incluidos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-14.webp" alt="Título destacado">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Suspenso</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">18+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2016</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Películas y series que te mantendrán al borde del asiento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-15.webp" alt="Título destacado">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Comedia</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Risas garantizadas con los mejores títulos de comedia en Prime.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-2.webp" alt="The Boys">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">The Boys</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">18+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2019</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Superhéroes, poder y corrupción en una de las series más aclamadas de Amazon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lo mejor en TV -->
+            <section class="content-area">
+                <div class="row-header">
+                    <div class="row-header-left">
+                        <h2 class="content-title">Lo mejor en series</h2>
+                        <a href="#" class="row-see-more">Ver más</a>
+                    </div>
+                    <div class="row-controls">
+                        <button class="row-btn row-prev" aria-label="Anterior" type="button">‹</button>
+                        <button class="row-btn row-next" aria-label="Siguiente" type="button">›</button>
+                    </div>
+                </div>
+                <div class="content-row">
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-16.webp" alt="Serie destacada">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Series destacadas</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Las series más vistas y recomendadas en Prime Video.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-17.webp" alt="Serie destacada">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Drama</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Historias intensas y personajes inolvidables.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-18.webp" alt="Serie destacada">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Acción</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">13+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Adrenalina sin pausa en las mejores series de acción.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-19.webp" alt="Serie destacada">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Thriller</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">18+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2016</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Intriga y giros inesperados en cada episodio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-20.webp" alt="Serie destacada">
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Ciencia ficción</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2022</span>
+                                    <span class="runtime">1 h 37 min</span>
+                                </div>
+                                <p class="content-tooltip-description">Mundos futuros y aventuras más allá de lo imaginable.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="content-container">
+                            <div class="image-container">
+                                <img class="content-image" src="content-pics/content-5.webp" alt="Sherlock">
+                                <span class="packshot-badge">EL MEJOR DRAMA</span>
+                                <div class="content-image-shadow"></div>
+                            </div>
+                            <div class="content-description">
+                                <p class="content-tooltip-title">Sherlock</p>
+                                <p class="prime-text"><span class="prime-check" aria-hidden="true"></span> Se incluye con Prime</p>
+                                <div class="content-actions">
+                                    <a href="#" class="play-button"><i class="fa fa-play" aria-hidden="true"></i><span>Reproducir</span></a>
+                                    <button type="button" class="action-btn details-btn" aria-label="Más información"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="12" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="20" r="1.2" fill="currentColor"/><circle cx="15" cy="20" r="1.2" fill="currentColor"/></svg></button>
+                                    <button type="button" class="action-btn add-btn" aria-label="Añadir a Mi lista"><img src="icons/plus.png" alt=""></button>
+                                    <button type="button" class="action-btn hide-btn" aria-label="No me interesa"><img src="icons/cancel.png" alt=""></button>
+                                </div>
+                                <div class="content-meta">
+                                    <span class="info-badge">EL MEJOR DRAMA</span>
+                                    <span class="age-rating">16+</span>
+                                    <img class="cc-icon" src="icons/subtitles.png" alt="Subtítulos">
+                                    <span class="year">2010</span>
+                                    <span class="runtime">45 min</span>
+                                </div>
+                                <p class="content-tooltip-description">El detective más famoso del mundo en el Londres actual.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        </div>
+
+        <div id="categories-view" class="page-view" data-page="categories" hidden>
+            <section class="categories-page" data-testid="categories" aria-label="Categorías">
+                <div class="categories-page-inner">
+                    <h1 class="categories-page-title" data-testid="page-title">Categorías</h1>
+                    <div class="categories-grid-block" data-testid="grid-container">
+                        <h2 class="categories-section-title"><span data-testid="carousel-title">Géneros</span></h2>
+                        <ul class="genres-grid" aria-label="Géneros">
+                            <li>
+                                <a class="genre-card" href="#genero-accion" aria-label="Acción y aventuras" data-genre="action">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_action_adv/af408326-5213-4c12-bad3-7d1d86cbe96c._UR1920,1080_SX624_FMpng_.png" alt="Acción y aventuras" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Acción y aventuras</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-anime" aria-label="Anime" data-genre="anime">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_anime/e846e8e9-01af-4480-bc22-9f371478c61e._UR1920,1080_SX624_FMpng_.png" alt="Anime" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Anime</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-comedia" aria-label="Comedia" data-genre="comedy">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_comedy/5e49df3b-16ff-4d58-9adc-33d1e851aa3a._UR1920,1080_SX624_FMpng_.png" alt="Comedia" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Comedia</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-documental" aria-label="Documental" data-genre="documentary">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_documentary/322bc0be-9b57-44dd-a78f-e82c633a57e4._UR1920,1080_SX624_FMpng_.png" alt="Documental" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Documental</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-drama" aria-label="Drama" data-genre="drama">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_drama/523ae41b-dfc8-49a9-a78c-816a738fe152._UR1920,1080_SX624_FMpng_.png" alt="Drama" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Drama</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-fantasia" aria-label="Fantasía" data-genre="fantasy">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_fantasy/9b9f84d3-b3c4-400b-8256-66e0d06c4e89._UR1920,1080_SX624_FMpng_.png" alt="Fantasía" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Fantasía</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-terror" aria-label="Terror" data-genre="horror">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_horror/f0ccae66-feda-4ae0-b1f9-ff478e8af3d2._UR1920,1080_SX624_FMpng_.png" alt="Terror" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Terror</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-ninos" aria-label="Niños" data-genre="kids">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_kids/064b0425-5b9b-4a9e-9ae9-f8c2eeced661._UR1920,1080_SX624_FMpng_.png" alt="Niños" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Niños</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-misterio" aria-label="Misterio y suspense" data-genre="suspense">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_mystery_thrillers/66970168-686d-4a7d-a25a-00541519338a._UR1920,1080_SX624_FMpng_.png" alt="Misterio y suspense" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Misterio y suspense</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-romance" aria-label="Romance" data-genre="romance">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_romance/a008caaf-c3d8-43e6-a6c4-ae9f977d843f._UR1920,1080_SX624_FMpng_.png" alt="Romance" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Romance</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-ciencia-ficcion" aria-label="Ciencia ficción" data-genre="science-fiction">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_science_fiction/08523d1e-196f-45f9-9c66-53a0ec7edfb7._UR1920,1080_SX624_FMpng_.png" alt="Ciencia ficción" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Ciencia ficción</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="genre-card" href="#genero-juvenil" aria-label="Juvenil" data-genre="young-adult">
+                                    <div class="genre-packshot">
+                                        <img src="https://m.media-amazon.com/images/S/sonata-images-prod/genre_background_suspense/5736ffa5-1904-4b3b-8967-97d659d95c1b._UR1920,1080_SX624_FMpng_.png" alt="Juvenil" width="624" height="351" loading="eager">
+                                    </div>
+                                    <span class="genre-label">Juvenil</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="profiles-view" class="page-view" data-page="profiles" hidden>
+            <section class="profiles-page" id="profilesPage" data-testid="pv-profiles-section" aria-label="Administración de perfiles">
+                <a class="profiles-page-logo" href="#inicio" data-testid="profiles-storefront-logo" aria-label="Prime Video — Inicio"></a>
+                <h1 class="profiles-page-title">¿Quién está viendo?</h1>
+                <ul class="profiles-list" role="list">
+                    <li class="profile-card" data-profile-id="1">
+                        <button type="button" class="profile-card-btn" data-profile-switch="1" aria-label="Cambiar al perfil de Perfil 1">
+                            <div class="profile-card-avatar" style="background-image: url('images/avatar-1.png')">
+                                <img src="images/avatar-1.png" alt="">
+                            </div>
+                            <p class="profile-card-name">Perfil 1</p>
+                        </button>
+                    </li>
+                    <li class="profile-card" data-profile-id="2">
+                        <button type="button" class="profile-card-btn" data-profile-switch="2" aria-label="Cambiar al perfil de Niños">
+                            <div class="profile-card-avatar" style="background-image: url('images/avatar-2.png')">
+                                <img src="images/avatar-2.png" alt="">
+                            </div>
+                            <p class="profile-card-name">Niños</p>
+                        </button>
+                    </li>
+                    <li class="profile-card profile-card--add">
+                        <button type="button" class="profile-card-btn" id="profilesAddBtn" aria-label="Añadir perfil">
+                            <div class="profile-card-avatar" aria-hidden="true"></div>
+                            <p class="profile-card-name">Añadir perfil</p>
+                        </button>
+                    </li>
+                </ul>
+                <div class="profiles-actions">
+                    <button type="button" class="profiles-edit-btn" id="profilesEditBtn" data-testid="profiles-ww-edit">Editar perfil</button>
+                </div>
+            </section>
+
+            <section class="profile-edit" id="profileEdit" data-testid="profile-view-container" hidden aria-label="Editar perfil">
+                <a class="profiles-page-logo" href="#inicio" data-testid="profiles-storefront-logo" aria-label="Prime Video — Inicio"></a>
+                <h1 class="profile-edit-title">Editar perfil</h1>
+                <form class="profile-edit-form" id="profileEditForm" data-testid="profile-view-edit-form" novalidate>
+                    <div class="profile-edit-main">
+                        <div class="profile-edit-avatar-wrap">
+                            <button type="button" class="profile-edit-avatar-btn" id="profileEditAvatarBtn" data-automation-id="change-avatar-button" title="Cambiar" aria-label="Cambiar">
+                                <div class="profile-edit-avatar" id="profileEditAvatar" role="img" aria-label="Cambiar" style="background-image:url('images/avatar-1.png')"></div>
+                                <span class="profile-edit-avatar-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M17.3 2.86c-.34.07-.72.24-1.01.43-.14.09-3.41 3.12-7.27 6.72L2 16.57V22h5.39l6.67-6.22c3.67-3.42 6.83-6.38 7.03-6.57.56-.55.83-1.02.97-1.67.15-.72.01-1.49-.39-2.16-.15-.25-1.26-1.42-1.75-1.84-.36-.31-.91-.59-1.31-.67-.35-.07-.98-.07-1.31 0zm1.05 2c.19.08 1.54 1.41 1.66 1.63.16.31.14.71-.06 1.01-.09.13-1.49 1.46-1.54 1.46-.02 0-.6-.58-1.31-1.28L15.82 6.4l.1-.1c.83-.79 1.48-1.37 1.62-1.43.2-.09.59-.1.81-.01zM15.66 9.08l1.28 1.28-.3.28c-.17.15-2.49 2.32-5.16 4.81L6.62 20H4.02l.01-1.29L9.17 12.6c2.83-2.64 5.16-4.81 5.18-4.81.02 0 .61.58 1.31 1.28z"/></svg>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="profile-edit-name-wrap">
+                            <label class="profile-edit-name-label" for="profileEditName">
+                                <span class="visually-hidden">Nombre del perfil</span>
+                                <input type="text" id="profileEditName" name="profile-name" class="profile-edit-name-input" minlength="1" maxlength="50" required placeholder="Introducir nombre" data-testid="profile-edit-create-name" autocomplete="off" value="Perfil 1">
+                            </label>
+                        </div>
+                        <div class="profile-edit-settings">
+                            <div class="profile-edit-row profile-edit-row--static" data-testid="profile-type-container">
+                                <div class="profile-edit-row-text">
+                                    <h3 class="profile-edit-row-title">Perfil de adulto</h3>
+                                    <p class="profile-edit-row-desc">Explora y ve todo el contenido disponible.</p>
+                                </div>
+                            </div>
+                            <button type="button" class="profile-edit-row profile-edit-row--link" id="profileEditPinBtn" data-testid="profile-edit-pinandlocks-manage">
+                                <div class="profile-edit-row-text">
+                                    <h3 class="profile-edit-row-title">PIN de la cuenta y bloqueos</h3>
+                                    <p class="profile-edit-row-desc">Este PIN evita todas las restricciones de compra y de acceso en cualquier perfil de esta cuenta. También se anulan todos los PIN de bloqueo del perfil.</p>
+                                </div>
+                                <span class="profile-edit-row-chevron" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.76 3.05c-.34.09-.6.35-.7.68-.08.26-.08.32 0 .59.06.21.16.32 3.79 3.95L14.58 12l-3.71 3.71c-2.88 2.88-3.73 3.75-3.79 3.89-.1.22-.11.58-.02.79.08.2.32.44.52.53.24.11.59.1.84-.02.15-.08 1.12-1.03 4.32-4.23 3.78-3.79 4.13-4.15 4.19-4.33.08-.25.08-.44 0-.69-.06-.18-.41-.54-4.17-4.3C9.95 4.53 8.61 3.21 8.48 3.15c-.23-.12-.49-.16-.72-.1z"/></svg>
+                                </span>
+                                <span class="profile-edit-row-action">Gestionar</span>
+                            </button>
+                            <div class="profile-edit-row profile-edit-row--link profile-edit-row--muted" data-testid="profile-edit-preferences">
+                                <div class="profile-edit-row-text">
+                                    <h3 class="profile-edit-row-title">Idiomas de reproducción en streaming</h3>
+                                    <p class="profile-edit-row-desc">Obtén recomendaciones de contenido con audio y subtítulos en tus idiomas preferidos.</p>
+                                </div>
+                                <span class="profile-edit-row-chevron" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M7.76 3.05c-.34.09-.6.35-.7.68-.08.26-.08.32 0 .59.06.21.16.32 3.79 3.95L14.58 12l-3.71 3.71c-2.88 2.88-3.73 3.75-3.79 3.89-.1.22-.11.58-.02.79.08.2.32.44.52.53.24.11.59.1.84-.02.15-.08 1.12-1.03 4.32-4.23 3.78-3.79 4.13-4.15 4.19-4.33.08-.25.08-.44 0-.69-.06-.18-.41-.54-4.17-4.3C9.95 4.53 8.61 3.21 8.48 3.15c-.23-.12-.49-.16-.72-.1z"/></svg>
+                                </span>
+                                <span class="profile-edit-row-action">Gestionar</span>
+                            </div>
+                            <div class="profile-edit-row profile-edit-row--static profile-edit-row--disabled" data-testid="profile-edit-disabled-remove">
+                                <div class="profile-edit-row-text">
+                                    <h3 class="profile-edit-row-title">Eliminar perfil</h3>
+                                    <p class="profile-edit-row-desc">No se puede eliminar el perfil del titular de la cuenta.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-edit-footer">
+                        <button type="button" class="profile-edit-btn profile-edit-btn--secondary" id="profileEditCancel" data-testid="profileView-cancel">Cancelar</button>
+                        <button type="submit" class="profile-edit-btn profile-edit-btn--primary" id="profileEditSave" data-testid="profileView-save" disabled>Guardar cambios</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <div class="profile-modal" id="avatarModal" hidden role="dialog" aria-modal="true" aria-labelledby="avatarModalTitle">
+            <div class="profile-modal-backdrop" data-avatar-close></div>
+            <div class="profile-modal-panel profile-modal-panel--avatars">
+                <div class="profile-modal-header">
+                    <h2 class="profile-modal-title" id="avatarModalTitle">Cambiar imagen de perfil</h2>
+                    <button type="button" class="profile-modal-close" data-avatar-close aria-label="Cerrar">
+                        <img src="icons/cancel.png" alt="">
+                    </button>
+                </div>
+                <ul class="avatar-picker-list" id="avatarPickerList" role="list">
+                    <li>
+                        <button type="button" class="avatar-picker-item is-selected" data-avatar="images/avatar-1.png" aria-label="Avatar 1" aria-pressed="true">
+                            <span class="avatar-picker-img" style="background-image:url('images/avatar-1.png')"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="avatar-picker-item" data-avatar="images/avatar-2.png" aria-label="Avatar 2" aria-pressed="false">
+                            <span class="avatar-picker-img" style="background-image:url('images/avatar-2.png')"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="avatar-picker-item" data-avatar="https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png" aria-label="Adulto azul" aria-pressed="false">
+                            <span class="avatar-picker-img" style="background-image:url('https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png')"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="avatar-picker-item" data-avatar="https://m.media-amazon.com/images/G/01/digital/AVATARS/HZBN_S1_PVProfileImageCircle_256x256_Charlie_Red.png" aria-label="Charlie Morningstar" aria-pressed="false">
+                            <span class="avatar-picker-img" style="background-image:url('https://m.media-amazon.com/images/G/01/digital/AVATARS/HZBN_S1_PVProfileImageCircle_256x256_Charlie_Red.png')"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="profile-modal" id="pinModal" hidden role="dialog" aria-modal="true" aria-labelledby="pinModalTitle">
+            <div class="profile-modal-backdrop" data-pin-close></div>
+            <div class="profile-modal-panel profile-modal-panel--pin">
+                <div class="profile-modal-header">
+                    <h2 class="profile-modal-title" id="pinModalTitle">Crear PIN de la cuenta</h2>
+                    <button type="button" class="profile-modal-close" data-pin-close aria-label="Cerrar">
+                        <img src="icons/cancel.png" alt="">
+                    </button>
+                </div>
+                <p class="pin-modal-desc">Crea un PIN de cuenta para continuar. Tu PIN debe tener 5 números.</p>
+                <div class="pin-modal-avatar" id="pinModalAvatar" style="background-image:url('images/avatar-1.png')" aria-hidden="true"></div>
+                <form class="pin-modal-form" id="pinModalForm">
+                    <label class="pin-modal-label" for="pinModalInput">
+                        <span class="visually-hidden">PIN de 5 dígitos</span>
+                        <input type="password" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" minlength="5" id="pinModalInput" class="pin-modal-input" placeholder="•••••" autocomplete="new-password" required>
+                    </label>
+                    <button type="button" class="pin-modal-toggle" id="pinModalToggle">Mostrar PIN</button>
+                    <div class="pin-modal-actions">
+                        <button type="button" class="profile-edit-btn profile-edit-btn--secondary" data-pin-close>Cancelar</button>
+                        <button type="submit" class="profile-edit-btn profile-edit-btn--primary" id="pinModalSubmit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-area">
+            <img class="footer-logo" src="images/bottom-logo.svg" alt="Prime Video">
+            <div class="footer-text">
+                <a href="#">Términos y Aviso de privacidad</a>
+                <a href="#">Envíanos tus comentarios</a>
+                <a href="#">Ayuda</a>
+                <span class="copyright">©1996-2026, Amazon.com, Inc. o sus filiales</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/detail.js"></script>
+</body>
+</html>
