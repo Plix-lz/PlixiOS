@@ -10,7 +10,7 @@
  */
 window.PLIX_SHEETS_CONFIG = {
   /** URL de la aplicación web de Apps Script (termina en /exec). */
-  apiUrl: "https://script.google.com/macros/s/AKfycbxR8anyY-AB9NNlcuIIc2JcZM39kYS05ZFjIipkyd1aR1CxHsdChMef2-Gwy2_zb2_9/exec",
+  apiUrl: "https://script.google.com/macros/s/AKfycbwPLkpawclmWF1l0I-WFay4BwYYCCF11AIne9EQ3t9AE151qlQzZt0Qw1644aMFLYcr/exec",
 
   /**
    * Claves lógicas → nombre real de la hoja en tu documento.
@@ -84,8 +84,8 @@ window.PLIX_SHEETS_CONFIG = {
   /** Caché en memoria + sessionStorage (ms). */
   cacheTtlMs: 5 * 60 * 1000,
 
-  /** Prefetch al cargar la página (no bloquea la UI). */
-  prefetch: ["movies", "series", "episodes", "servers"],
+  /** Prefetch al cargar la página (solo películas por ahora). */
+  prefetch: ["movies"],
 
   /** Mostrar aviso discreto si falla Sheets (no deja la web en blanco). */
   showErrorToast: true
